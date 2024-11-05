@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Riders</title>
+    <link rel="stylesheet" href="/stylesheets/registeredRiders.css"> <!-- Optional CSS -->
+<style>
+    /* registeredRiders.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* Dark gray color for the header */
+    margin-bottom: 20px;
+}
+
+/* Rider List Container */
+.rider-list {
+    max-width: 800px; /* Maximum width for the list */
+    margin: 0 auto; /* Center the list on the page */
+}
+
+/* Individual Rider Item */
+.rider-item {
+    background-color: white; /* White background for each rider */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the item */
+    margin: 10px 0; /* Margin between items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Profile Icon */
+.profile-icon {
+    max-width: 100px; /* Maximum width for the profile icon */
+    border-radius: 50%; /* Circular profile icon */
+    display: block; /* Block display */
+    margin: 10px auto; /* Center the image */
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block; /* Inline-block for button */
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Margin above the button */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .rider-item {
+        padding: 15px; /* Less padding on small screens */
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons on small screens */
+        margin-top: 10px; /* Smaller margin */
+    }
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Registered Riders</h1>
+    </header>
+    <main>
+        <div class="rider-list">
+            <% if (riders.length > 0) { %>
+                <% riders.forEach(rider => { %>
+                    <div class="rider-item">
+                        <h2><%= rider.eName %></h2>
+                        <p><strong>ID:</strong> <%= rider.eId %></p>
+                        <p><strong>Email:</strong> <%= rider.eEmail %></p>
+                        <p><strong>Contact:</strong> <%= rider.contact %></p>
+                        <p><strong>Address:</strong> <%= rider.eAddress %></p>
+                        <p><strong>Location:</strong> Latitude: <%= rider.latitude %>, Longitude: <%= rider.longitude %></p>
+                        <% if (rider.profileIcon) { %>
+                            <img src="<%= rider.profileIcon %>" alt="Profile Icon" class="profile-icon" />
+                        <% } %>
+                        <hr>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No registered riders found.</p>
+            <% } %>
+        </div>
+        <a href="/admin_home" class="btn">Back to Admin Home</a>
+    </main>
+</body>
+</html>

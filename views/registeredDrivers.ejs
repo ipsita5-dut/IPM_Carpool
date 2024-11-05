@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Riders</title>
+    <link rel="stylesheet" href="/stylesheets/registeredRiders.css"> <!-- Optional CSS -->
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#driver-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.driver-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px; /* Adjust width as needed */
+    transition: transform 0.2s;
+}
+
+.driver-card:hover {
+    transform: scale(1.05);
+}
+
+.driver-card h3 {
+    margin-top: 0;
+    color: #007BFF; /* Bootstrap primary color */
+}
+
+.driver-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.aadhar-card-pic {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    #driver-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .driver-card {
+        width: 90%; /* Full width on small screens */
+    }
+}
+    </style>
+</head>
+<body>
+    <h1>Registered Riders</h1>
+    <div id="driver-container">
+        <% if (drivers.length > 0) { %>
+            <% drivers.forEach(driver => { %>
+                <div class="driver-card">
+                    <h3><%= driver.dName %></h3>
+                    <p>Email: <%= driver.dEmail %></p>
+                    <p>Contact: <%= driver.dcontact %></p>
+                    <p>License: <%= driver.license %></p>
+                    <p>Vehicle No: <%= driver.vehicleNo %></p>
+                    <p>Status: <%= driver.status %></p>
+                    <img src="<%= driver.aadharCard %>" alt="Aadhar Card" class="aadhar-card-pic" />
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No registered riders found.</p>
+        <% } %>
+    </div>
+</body>
+</html>
