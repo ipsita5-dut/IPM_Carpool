@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings</title>
+    <link rel="stylesheet" href="/stylesheets/myBookings.css"> <!-- Add your CSS file -->
+    <link rel="stylesheet" href="/stylesheets/header.css"> <!-- Add your CSS file -->
+    <link rel="stylesheet" href="/stylesheets/footer.css"> <!-- Add your CSS file -->
+
+
+</head>
+<body>
+    <%- include('./partials/header') %>
+
+    <h1>My Bookings</h1>
+    <div class="bookings-container">
+        <% if (bookings.length > 0) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Pickup Location</th>
+                        <th>Driver Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% bookings.forEach(booking => { %>
+                        <tr>
+                            <td><%= booking._id %></td>
+                            <td><%= booking.pickupAddress %></td>
+                            <td><%= booking.driverId ? booking.driverId.dName : 'N/A' %></td>
+                            <td><%= booking.status %></td>
+                            <td>
+                                <% if (booking.status === 'accepted') { %>
+                                    <button class="cancel-btn" data-id="<%= booking._id %>">Cancel</button>
+                                    <button class="confirmation-btn" data-id="<%= booking._id %>">Show Confirmation</button>
+
+                                    <% } %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>No bookings found.</p>
+        <% } %>
+    </div>
+
+    <script src="/javascripts/myBookings.js"></script> <!-- Add your JS file -->
+</body>
+</html>

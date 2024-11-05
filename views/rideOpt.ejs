@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Ride Options</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/rideOpt.css">
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu3n8SgW9peGPFRl5Qe7fYvGdeuk8xzrI&loading=async&libraries=marker&v=beta"></script>
+  <!-- Replace with your Google Maps API key -->
+</head>
+
+<body>
+  <h1>Ride Options</h1>
+  <!-- <div class="ride-options-container">
+    <select id="car-types">
+      <option value="">Select a car type</option>
+      <option value="Sedan">Sedan</option>
+      <option value="SUV">SUV</option>
+      <option value="Hatchback">Hatchback</option>
+    </select>
+    <button id="search-ride">Book Now</button>
+  </div> -->
+
+  <div class="ride-options-container">
+    <div class="ride-option" data-car-type="Maruti Suzuki Swift Dzire">
+      <img src="/images/mssd.jpg" alt="Maruti Suzuki Swift Dzire">
+      <h3>Maruti Suzuki Swift Dzire</h3>
+      <!-- <p>Affordable SWIFT DESIRES</p> -->
+    </div>
+
+    <div class="ride-option" data-car-type="Maruti Suzuki Swift">
+      <img src="/images/mss.jpg" alt="Maruti Suzuki Swift">
+      <h3>Maruti Suzuki Swift</h3>
+      <!-- <p>Affordable compact rides</p> -->
+    </div>
+
+    <div class="ride-option" data-car-type="Maruti Suzuki Alto">
+      <img src="/images/msa.jpg" alt="Maruti Suzuki Alto">
+      <h3>Maruti Suzuki Alto</h3>
+      <!-- <p>Affordable BIKE rides</p> -->
+    </div>
+
+    <div class="ride-option" data-car-type="Hyundai Xcent">
+      <img src="/images/hx.jpg" alt="Hyundai Xcent">
+      <h3>Hyundai Xcent</h3>
+      <!-- <p>Affordable BIKE rides</p> -->
+    </div>
+    <div class="ride-option" data-car-type="Hyundai Grand i10">
+      <img src="/images/hgi10.jpg" alt="Hyundai Grand i10">
+      <h3>Hyundai Grand i10</h3>
+      <!-- <p>Affordable BIKE rides</p> -->
+    </div>
+    <div class="ride-option" data-car-type="Tata Zest">
+      <img src="/images/tz.jpg" alt="Tata Zest">
+      <h3>Tata Zest</h3>
+      <!-- <p>Affordable BIKE rides</p> -->
+    </div>
+
+    <div class="ride-option" data-car-type="Tata Indigo">
+      <img src="/images/ti.jpg" alt="Tata Indigo">
+      <h3>Tata Indigo</h3>
+      <!-- <p>Affordable BIKE rides</p> -->
+    </div>
+
+    <div class="ride-option" data-car-type="Motorcycle">
+      <img src="/images/m.jpg" alt="Motorcycle">
+      <h3>Motorcycle</h3>
+      <!-- <p>Affordable BIKE rides</p> -->
+    </div>
+
+    <div class="ride-option" data-car-type="Others">
+      <img src="/images/o.jpg" alt="Others">
+      <h3>Others</h3>
+      <!-- <p>Affordable BIKE rides</p> -->
+    </div>
+
+    
+
+    <button id="search-ride">Book Now</button>
+  </div>
+
+  <div id="map" style="height: 400px; display: none;"></div> <!-- Map will be displayed here -->
+  <button id="cancel-ride" style="display: none;">Cancel Ride</button> <!-- Cancel Ride button -->
+
+
+  <button id="view-confirmation" style="display: none;">View Confirmation Page</button>
+  <!-- View Confirmation Page button -->
+
+
+
+
+
+  <script src="/javascripts/rideOpt.js"></script> <!-- Include the external JavaScript file -->
+</body>
+
+</html>
